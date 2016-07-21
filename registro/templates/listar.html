@@ -1,0 +1,68 @@
+{% extends 'master.html' %}
+	{% block contenido %}
+	<br><br>
+		{% if alumno %}
+		<center><div class="alert alert-info"><H2>ALUMNOS</H2></div></center>
+		
+		<table class="table table-striped">
+		<tr>
+			<td><label>Cedula</label></td>
+			<td><label>Nombre</label></td>
+			<td><label>Apellido</label></td>
+			<td><label>Opciones</label></td>
+						
+		</tr>
+
+		{% for a in alumno%}
+		<tr>
+			<td><a href="modificaralumno?cedula={{a.cedula}}">{{a.cedula}}</a> </td>
+			<td>{{a.nombre}}</td>
+			<td>{{a.apellido}}</td>
+			<td><a href="eliminaral?cedula={{a.cedula}}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+			
+			
+					
+		</tr>
+		{% endfor %}
+		</table>
+		{% else %}
+		
+
+		<div class="alert alert-info">No hay alumnos</div>
+		{% endif %}
+
+		<center><a href="crearalumno" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span aria-hidden="true">Ingresar Alumno</span></a></center><br>
+
+
+		{% if materia %}
+		<center><div class="alert alert-info"><H2>MATERIA</H2></div></center>
+		
+		<table class="table table-striped">
+		<tr>
+			<td><label>Nombre</label></td>
+			<td><label>Codigo</label></td>
+			<td><label>Cupos</label></td>
+			<td>Opciones</td>			
+		</tr>
+
+		{% for m in materia%}
+		<tr>
+			
+			<td><a href="modificarmateria?codigo={{m.codigo}}">{{m.codigo}}</a> </td>
+			<td>{{m.nombre}}</td>
+			<td>{{m.cupos}}</td>
+			<td><a href="eliminarma?codigo={{m.codigo}}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+					
+		</tr>
+		{% endfor %}
+		</table>
+		{% else %}
+		
+
+		<div class="alert alert-info">No hay materias</div>
+		{% endif %}
+		<center><a href="crearmateria" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span aria-hidden="true">Ingresar Materia</span></a></center>
+		
+
+
+	{% endblock contenido %}

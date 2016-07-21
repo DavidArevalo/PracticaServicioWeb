@@ -1,0 +1,20 @@
+<DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>Consumo Web</title>
+        <script src="angular/angular.min.js"></script>
+        <script src="angular/angular-resource.js"></script>
+        <script src="js/consumoWeb.js"></script>
+</head>
+<body ng-app="web" >
+	<div ng-controller="controladorweb">
+	     <form ng-submit="validar()">
+	     	Cédula: <input type="text" name="cedula" ng-model="cedulaInput">
+	     	<input type="submit" value="Buscar">
+	     </form>
+	     {{mensaje}}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+	{% block contenido %}
+		{% if alumno %}
+		<div>modificar producto</div>
+		
+		<table border="3">
+		<tr>
+			<td><label>Nombre</label></td>
+			<td><label>Apellido</label></td>
+			<td></td>
+					
+		</tr>
+
+		{% for a in alumno%}
+		<tr>
+			<td>{{a.nombre}}</td>
+			<td>{{a.apellido}}</td>
+			<td><a href="../modificar?cedula={{a.cedula}}">modificar</a></td>
+			
+					
+		</tr>
+		{% endfor %}
+		</table>
+		{% else %}
+		
+
+		<div>no hay alumnos</div>
+
+
+
+		{% endif %}
+		<a href="../listar" type="button"></a>
+	{% endblock contenido %}

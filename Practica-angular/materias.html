@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Practica 7</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="angular/angular.min.js"></script>
+         <script src="angular/angular-route.min.js"></script>
+         <script src="angular/angular-resource.js"></script>
+        <script src="js/materias.js"></script>
+
+    </head>
+    <body ng-app="app" >
+    <div ng-controller="materias">
+
+      <table class="table table-striped">
+        <tr>
+            <td><h3>Nombre</h3></td>
+            <td><h3>Codigo</h3></td>
+            <td><h3>Cupos</h3></td>                       
+        </tr>
+        
+        <tr ng-repeat="fila in lista">
+            <td>{{fila.nombre}}</td>
+            <td>{{fila.codigo}}</td>
+            <td>{{fila.cupos}}</td>
+        </tr>
+      </table>
+    </div>
+    </body>
+</html>
